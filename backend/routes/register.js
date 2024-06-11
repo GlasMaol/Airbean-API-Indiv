@@ -7,11 +7,11 @@ const router = Router();
 
 router.post('/', validate(userSchema), async (req, res, next) => {
     try {
-        const { error } = userSchema.validate(req.body);
+        const { error, value } = userSchema.validate(req.body, { abortEarly: false, stripUnknown: true });
         
         if (error) return res.status(400).send(error.details[0].message);
 
-        const { username, password, email } = req.body;
+        const { username, password, email, role } = value;
 
         const existingUser = await database.findOne({ username });
         if (existingUser) return res.status(400).json({ message: 'Användarnamnet är redan taget' });
@@ -21,7 +21,7 @@ router.post('/', validate(userSchema), async (req, res, next) => {
             userId = (Math.floor(1000 + Math.random() * 9000)).toString();
         } while (await database.findOne({ userId }));
 
-        const newUser = await database.insert({ username, password, email, userId });
+        const newUser = await database.insert({ username, password, email, userId, role });
         res.status(201).json({ message: 'User registered successfully', user: newUser });
     } catch (err) {
         console.error(err);

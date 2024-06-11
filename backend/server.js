@@ -1,5 +1,6 @@
 import express from 'express';
 import menuRouter from './routes/menu.js';
+import addProductRouter from './routes/addProduct.js'
 import nedb from 'nedb-promises';
 import registerRouter from './routes/register.js';
 import loginRouter from './routes/login.js';
@@ -12,18 +13,23 @@ import confirmationRouter from './routes/confirmation.js';
 import logger from './middlewares/logger.js';
 import orderHistoryRouter from './routes/orderhistory.js';
 
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+//console.log("Testing server.js exports");
 export const database = nedb.create({ filename: 'users.db', autoload: true });
 export const db = nedb.create({ filename: 'cart.db', autoload: true });
 export const orderDB = nedb.create({ filename: 'order.db', autoload: true });
 export const orderNumberDB = nedb.create({ filename: 'orderNumber.db', autoload: true });
+export const menuDB = nedb.create({ filename: 'menu.db', autoload: true })
+//console.log('menuDB is defined as:', menuDB);
 
 app.use(express.json());
 app.use(logger); // Global logger middleware
 
 app.use('/menu', menuRouter);
+app.use('/addproduct', addProductRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/update-account', updateUserRouter);

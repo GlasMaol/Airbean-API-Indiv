@@ -14,6 +14,7 @@ import logger from './middlewares/logger.js';
 import orderHistoryRouter from './routes/orderhistory.js';
 import updateProductRouter from './routes/updateProduct.js';
 import deleteProductRouter from './routes/deleteProduct.js';
+import offerRouter from './routes/offer.js';
 
 
 const app = express();
@@ -24,8 +25,10 @@ export const database = nedb.create({ filename: 'users.db', autoload: true });
 export const db = nedb.create({ filename: 'cart.db', autoload: true });
 export const orderDB = nedb.create({ filename: 'order.db', autoload: true });
 export const orderNumberDB = nedb.create({ filename: 'orderNumber.db', autoload: true });
-export const menuDB = nedb.create({ filename: 'menu.db', autoload: true })
+export const menuDB = nedb.create({ filename: 'menu.db', autoload: true });
 //console.log('menuDB is defined as:', menuDB);
+export const offerDB = nedb.create({ filename: 'offer.db', autoload: true })
+
 
 app.use(express.json());
 app.use(logger); // Global logger middleware
@@ -42,6 +45,7 @@ app.use('/confirmation', confirmationRouter);
 app.use('/order-history', orderHistoryRouter);
 app.use('/updateproduct', updateProductRouter);
 app.use('/deleteproduct', deleteProductRouter);
+app.use('/offer', offerRouter);
 
 app.use(errorHandlerMiddleware);
 

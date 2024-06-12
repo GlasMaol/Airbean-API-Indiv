@@ -1,6 +1,6 @@
 import express from 'express';
 import menuRouter from './routes/menu.js';
-import addProductRouter from './routes/addProduct.js'
+import addProductRouter from './routes/addProduct.js';
 import nedb from 'nedb-promises';
 import registerRouter from './routes/register.js';
 import loginRouter from './routes/login.js';
@@ -12,6 +12,8 @@ import info from './routes/info.js';
 import confirmationRouter from './routes/confirmation.js';
 import logger from './middlewares/logger.js';
 import orderHistoryRouter from './routes/orderhistory.js';
+import updateProductRouter from './routes/updateProduct.js';
+import deleteProductRouter from './routes/deleteProduct.js';
 
 
 const app = express();
@@ -38,6 +40,8 @@ app.use('/order', orderRouter);
 app.use('/info', info);
 app.use('/confirmation', confirmationRouter);
 app.use('/order-history', orderHistoryRouter);
+app.use('/updateproduct', updateProductRouter);
+app.use('/deleteproduct', deleteProductRouter);
 
 app.use(errorHandlerMiddleware);
 

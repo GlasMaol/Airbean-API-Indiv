@@ -5,7 +5,7 @@ const menuSchema = Joi.object({
     title: Joi.string().required(),
     desc: Joi.string().required(),
     price: Joi.number().required(),
-    offer: Joi.boolean().default(false)
+    offer: Joi.boolean().default(false),
 });
 
 export default menuSchema;

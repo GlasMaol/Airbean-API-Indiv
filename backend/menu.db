@@ -1,5 +1,7 @@
 {"id":1,"title":"Bryggkaffe","desc":"Bryggd på månadens bönor.","price":39,"offer":"true","_id":"7akNIEXcIS65F4Ua"}
+{"id":6,"title":"Scottish Coffee","desc":"Månadens whisky och bästa kaffet.","price":154,"offer":"true","timeStamp":"2024-06-12 19:11","_id":"L3dDLIL4d58PtrnP"}
 {"id":2,"title":"Caffè Doppio","desc":"Bryggd på månadens bönor.","price":49,"offer":"true","_id":"MnVhZ9yvx3h53gxS"}
-{"id":4,"title":"Latte Macchiato","desc":"Bryggd på månadens Colombia bönor.","price":49,"offer":"false","_id":"YrCkQGZYOMvmZ0so"}
-{"id":"5","title":"Iskaffe","desc":"Lyxig iskaffe gjord av de bästa bönorna.","price":"35","offer":"false","_id":"cdDy1pMHma8i08DJ"}
+{"id":7,"title":"Irish Coffee","desc":"Månadens whiskey och bästa kaffet.","price":145,"offer":"true","createdAt":"2024-06-12 19:14","_id":"VKWQpT8t4Ztn9NGD","editedAt":"2024-06-12 19:24"}
+{"id":4,"title":"Latte Macchiato","desc":"Bryggd på månadens Colombia bönor.","price":45,"offer":"false","_id":"YrCkQGZYOMvmZ0so","editedAt":"2024-06-12 19:24"}
 {"id":3,"title":"Cappuccino","desc":"Bryggd på månadens bönor.","price":55,"offer":"false","_id":"rXg146Ogvqqc2EwF"}
+{"id":5,"title":"Kaffe Latte","desc":"Bryggd på månadens bönor.","price":54,"offer":"true","_id":"yOLnNtnv5FeLgBmS"}

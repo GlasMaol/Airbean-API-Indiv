@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import { readFileSync } from 'fs';
+import { menuDB } from '../server.js'
 
 const router = Router();
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const data = JSON.parse(readFileSync('./data/menu.json'));
-        res.send(data);
+        const menuItems = await menuDB.find({});
+        res.json(menuItems);
     } catch(err) {
         console.log(err);
         res.status(500).send('Internal server error');
